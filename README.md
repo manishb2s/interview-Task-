@@ -43,6 +43,7 @@ This repository contains a blog scaffolding built with Laravel 8 featuring:
 - Once all the tasks are complete, push the changes to the repository.
 - Create a pull-request for code review. Your branch will be merged to `main` after the code review is successful.
 - **You have three days to complete the tasks after you have accepted the invitation to collaborate on the repository.**
+- **Ideally, you should complete all the tasks but if you're stuck, move on to the next task and try to complete the remaining tasks later.**
 
 ## Submission Checklist
 Before you create a pull-request to submit the changes, make sure that:
