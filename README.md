@@ -33,7 +33,7 @@ This repository contains a blog scaffolding built with Laravel 8 featuring:
 - The `/login` and `/register` routes inside `routes/auth.php` show the login and registration forms respectively.
     - Update the login view to include a button to show the registration form.
     - Update the registration view to include a button to show the login form.
-- Implement logout and add the missing `/logout` route to `routes/api.php`
+- Implement `logout` and add the missing `/logout` route to `routes/api.php`
 
 ## Instructions
 - Clone this repository.
