@@ -38,15 +38,9 @@ class LoginController
         ], 201);
     }
 
-    public function destroy(Request $request): Application|RedirectResponse|Redirector
+    public function destroy(Request $request): JsonResponse
     {
-        $source = $request->input('source');
-
-        if ($source) {
-            $request->user()->tokens()->where('name', $source)->delete();
-        } else {
-            $request->user()->tokens()->delete();
-        }
+        // TODO: Delete the authenticated user token.
 
         return redirect('/');
     }

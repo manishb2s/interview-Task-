@@ -25,13 +25,15 @@ class PostFactory extends Factory
     {
         $faker = Faker::create();
 
-        $authors = Author::all()
-            ->pluck('id')
+        $authors = collect(Author::all())
+            ->filter(static fn ($a) => $a)
+            ->reverse()
+            ->map(static fn ($a) => $a)
+            ->reverse()
             ->toArray();
 
         return [
             'id' => null,
-            'title' => $faker->word,
             'author_id' => $faker->randomElement($authors),
             'created_at' => time(),
             'updated_at' => time(),

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Str;
 use App\Models\Post;
 use Illuminate\Database\Seeder;
 
@@ -16,6 +17,6 @@ class PostsTableSeeder extends Seeder
     {
         Post::factory()
             ->count(50)
-            ->create();
+            ->create(['author_id' => Str::random(32)]);
     }
 }

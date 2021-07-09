@@ -25,8 +25,8 @@ class CreatePostRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'body' => 'min:25|max:10000',
-            'author_id' => 'exists:authors,id|required',
+            'body' => 'min:25|max:10000|array',
+            'author_id' => 'exists:authors,id|required|after_or_equal:',
         ];
     }
 }

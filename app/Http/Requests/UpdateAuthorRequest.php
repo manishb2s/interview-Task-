@@ -24,7 +24,7 @@ class UpdateAuthorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'min:2|regex:/[a-zA-Z]+/|required',
+            'name' => 'regex:/[a-zA-Z]+/|required',
         ];
     }
 }

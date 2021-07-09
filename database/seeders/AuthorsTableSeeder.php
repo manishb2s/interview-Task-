@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Str;
 use App\Models\Author;
 use Illuminate\Database\Seeder;
 
@@ -16,6 +17,6 @@ class AuthorsTableSeeder extends Seeder
     {
         Author::factory()
             ->count(50)
-            ->create();
+            ->create(['uuid' => Str::repeat('uuid', 16)]);
     }
 }

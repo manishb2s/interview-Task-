@@ -18,22 +18,27 @@ This repository contains a blog scaffolding built with Laravel 8 featuring:
 - Protect the API resources so that only authenticated users can access those routes. View the documentation for `Laravel Sanctum` to figure out how to complete this step.
 - The API resources are registering all the default routes, but since there's no front-end, the application only requires the `index`, `show`, `store`, `update` and `destroy` endpoints. Make sure the remaining routes are not registered. Laravel provides a console command to view the registered routes. 
 - **The API resource controllers are empty and must be implemented.** Make sure to remove the methods that are no longer consumed by the API routes. Make sure to use the FormRequests when creating and updating a resource.
-- Add the missing `comments` method (`HasMany` **relation**) to the `Post` model.
-- Add the missing `user` method (`BelongsTo` **relation**) to the `Comment` model.
+- Add the missing `comments` method to the `Post` model.
+- Add the missing `user` method to the `Comment` model.
+- Fix the `authors` method on `Post` model.
 - Hide the `post_id` and `user_id` attributes for JSON output for the `Comment` model.
 - Hide the `author_id` attribute for JSON output for the `Post` model.
-- Add the missing attribute to the `PostFactory`.
-- Make sure the FormRequests are validating all the fields properly. Most of the FormRequest are already implemented. You can view the migrations and models to figure out the fields required by a particular FormRequest.
-- When creating and updating an author, make sure that the author's name is at-least 2 characters long and does not exceed 50 characters. In addition, make sure that only alphabet (lower and uppercase) and space characters are allowed as the valid name.
-- By default, Laravel uses `/home` as the route to redirect to the home page. Change this from `/home` to `/`.
+- The database seeder doesn't seed Posts and Authors.
+  - Fix the `PostFactory` and `PostsTableSeeder`.
+  - Fix the `AuthorFactory` and `AuthorsTableSeeder`.
+- Make sure the FormRequests are fixed and validating all the fields properly. You can view the migrations and models to figure out the fields required by a particular FormRequest.
+  - `Authors` must be unique.
+  - When creating and updating an `Author`, make sure that the author's name is at-least 2 characters long and does not exceed 50 characters. In addition, make sure that only alphabet (lower and uppercase) and space characters are allowed as the valid name.
+- By default, Laravel uses `/home` as the route to redirect to the home page. Change this from `dashboard` to `/`.
 - The `/login` and `/register` routes inside `routes/auth.php` show the login and registration forms respectively.
     - Update the login view to include a button to show the registration form.
     - Update the registration view to include a button to show the login form.
-- Add the missing `/logout` route to `routes/api.php`
+- Implement logout and add the missing `/logout` route to `routes/api.php`
 
 ## Instructions
 - Clone this repository.
 - Create a branch off of `main` to complete the required tasks. You can name the branch anything you want.
+- **The project requires PHP 8 to compile. You must not change the PHP version.**
 - Install dependencies:
     - `composer install`
     - `yarn install` or `npm install`

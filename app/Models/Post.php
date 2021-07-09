@@ -30,12 +30,12 @@ class Post extends Model
     protected $dates = ['created_at', 'updated_at'];
 
     /**
-     * Get the author associated with this model.
+     * Get the authors associated with this model.
      *
-     * @return BelongsTo
+     * @return HasMany
      */
-    public function author(): BelongsTo
+    public function authors(): HasMany
     {
-        return $this->belongsTo(Author::class);
+        return $this->hasMany(Author::class);
     }
 }
